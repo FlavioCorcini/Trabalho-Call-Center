@@ -5,19 +5,19 @@ import java.util.Random;
 public class Cliente {
 	private static long contadorId = 0;
 	static String nomes[] = {"Maria Luiza","Flávio","Rhuan","Jamaica","Carlos","Gabriel","Mariana","Geovana","Filipe"};
-	static String sobrenomes[] = {"Pena","Corcini","Oliveira","Samora","Assis","Quintão"};
+	static String sobrenomes[] = {" Pena"," Corcini"," Oliveira"," Samora"," Assis"," Quintão"};
 	
 	//atributos
 	private long id;
 	private String nome;
+	private int chegadaNFila; // armazena quando o cliente entrou na fila
 	
 	//construtor
 	public Cliente(){
-		this.id = contadorId++;
+		this.id = contadorId++; // id auto Incremento
 		this.nome = gerarNome();
 		
 		}
-	
 	
 	//metodos
 	String gerarNome() {
@@ -45,6 +45,15 @@ public class Cliente {
 	public long getId() {
 		return id;
 	}
-	
+
+
+	public int getChegadaNFila() {
+		return chegadaNFila;
+	}
+
+
+	public void setChegadaNFila(int chegadaNFila) {
+		this.chegadaNFila = chegadaNFila;
+	}
 	
 }

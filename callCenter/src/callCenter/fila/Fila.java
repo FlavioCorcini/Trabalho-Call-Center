@@ -5,9 +5,11 @@ public class Fila<T> {
 	
 	private Celula<T> inicio;
 	private Celula<T> fim;
+	private int totalDeItens;
 	
 	// -- costrutor
 	public Fila() {
+		totalDeItens = 0;
 	}
 	
 	// -- metodos
@@ -26,7 +28,8 @@ public class Fila<T> {
 			fim.prox = novacell;
 			fim = novacell;			
 		}
-				
+		
+		totalDeItens++;
 		return item;
 	}
 
@@ -38,12 +41,16 @@ public class Fila<T> {
 		
 		T item = inicio.item;
 		if (inicio == fim) {
-			fim = null;
+			inicio = null;
+		}else {
+			inicio = inicio.prox;
 		}
-		inicio = inicio.prox;
 		
-		
+		totalDeItens--;
 		return item;
+	}
+	public void decrementarTotal() {
+	    this.totalDeItens--;
 	}
 	
 	// -- GETs
@@ -53,6 +60,18 @@ public class Fila<T> {
 	
 	public Celula<T> getFim() {
 		return fim;
+	}
+
+	public void setInicio(Celula<T> inicio) {
+		this.inicio = inicio;
+	}
+
+	public void setFim(Celula<T> fim) {
+		this.fim = fim;
+	}
+
+	public int getTotalDeItens() {
+		return totalDeItens;
 	}
 	
 }

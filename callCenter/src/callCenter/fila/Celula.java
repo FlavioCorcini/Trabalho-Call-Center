@@ -1,8 +1,9 @@
 package callCenter.fila;
 
 public class Celula <T> {
-	T item;
-	Celula<T> prox;
+	public T item;
+	public Celula<T> prox;
+	//public Celula<T> ant;
 	
 	// construtor
 	public Celula() {

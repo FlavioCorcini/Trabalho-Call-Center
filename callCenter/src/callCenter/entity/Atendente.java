@@ -10,13 +10,16 @@ public class Atendente {
 	//atributos
 	private long id;
 	private String nome;
+	private int temp; // armazena quando o atendente entrou no box para trabalhar ou quando começou o descanso
 
 	//construtor
 	public Atendente(){
-		this.id = contadorId++;
+		this.id = contadorId++; // id auto Incremento
 		this.nome = gerarNome();
 	}
 
+	//metodos 
+	
 	private String gerarNome(){
 		int aletorio = random.nextInt(8);
 		return nomes[aletorio];
@@ -30,6 +33,15 @@ public class Atendente {
 	public String getNome() {
 		return nome;
 	}
+
+	public int getTemp() {
+		return temp;
+	}
+
+	public void setTemp(int temp) {
+		this.temp = temp;
+	}
+	
 	
 	
 }
